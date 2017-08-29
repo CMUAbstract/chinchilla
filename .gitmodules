@@ -1,0 +1,10 @@
+[submodule "Mementos"]
+	path = Mementos
+	url = https://github.com/spqr/mementos.git
+	branch = wolverine
+[submodule "LLVM"]
+	path = LLVM
+	url = git@github.com:CMUAbstract/alpaca-pass-oopsla.git
+[submodule "AlpacaRuntime/libalpaca"]
+	path = AlpacaRuntime/libalpaca
+	url = git@github.com:CMUAbstract/libalpaca-oopsla.git
