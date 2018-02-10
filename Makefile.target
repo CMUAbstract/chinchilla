@@ -7,9 +7,15 @@ LOCAL_CFLAGS += -DALPACA
 
 ALPACA_LIB = $(ALPACA_ROOT)/LLVM/build/src/libAlpacaPass.so
 
-%.alpaca.bc : %.bc
+%.gp.bc : %.bc
 	$(OPT) -debug -stats -load $(ALPACA_LIB) \
-	  -alpaca \
+	  -globalpromotion \
+	  -o $@ $<
+
+%.alpaca.bc : %.gp.bc
+	$(OPT) -debug -stats -load $(ALPACA_LIB) \
+	  -getloopcount \
+	  -transform \
 	  -o $@ $<
 
 LINK_OBJECTS = $(OBJECTS:.o=.alpaca.bc)

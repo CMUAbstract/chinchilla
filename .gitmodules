@@ -6,7 +6,7 @@
 	path = LLVM
 	url = https://github.com/CMUAbstract/alpaca-pass-oopsla
 #	url = git@github.com:CMUAbstract/alpaca-pass-oopsla.git
-[submodule "AlpacaRuntime/libalpaca"]
-	path = AlpacaRuntime/libalpaca
-	url = https://github.com/CMUAbstract/libalpaca-oopsla
+#[submodule "AlpacaRuntime/libalpaca"]
+#	path = AlpacaRuntime/libalpaca
+#	url = https://github.com/CMUAbstract/libalpaca
 #	url = git@github.com:CMUAbstract/libalpaca-oopsla.git
