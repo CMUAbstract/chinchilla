@@ -1,0 +1,8 @@
+Below ones should not be undo-logged
+
+1. The variable which always only becomes the same constant
+2. Pointer that only holds the same address throughout the program
+3. write which is guaranteed to not have preceding read of the same address (end_run() is the divider) (Not Implemented)
+4. tight loops backup in their checkpoint (unconditionally) and have guard in preheader
+4-1. For this to really pay off, we might need unrolling (Not Implemented)
+5. when basicblock is write dominated, do backup only when not checkpointing (Not Implemented)
