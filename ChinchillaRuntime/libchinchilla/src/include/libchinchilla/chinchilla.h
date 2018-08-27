@@ -1,5 +1,5 @@
-#ifndef ALPACA_H
-#define ALPACA_H
+#ifndef CHINCHILLA_H
+#define CHINCHILLA_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -170,4 +170,4 @@ void _init();
  *  */
 //#define TRANSITION_TO(task) transition_to(TASK_REF(task))
 #define TRANSITION_TO(task) transition_to(&task)
-#endif // ALPACA_H
+#endif // CHINCHILLA_H
