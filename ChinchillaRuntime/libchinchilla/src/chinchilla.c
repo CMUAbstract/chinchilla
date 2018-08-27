@@ -3,7 +3,7 @@
 #include <libio/log.h>
 #include <msp430.h>
 
-#include "alpaca.h"
+#include "chinchilla.h"
 
 #define CHKPT_ACTIVE 0
 #define CHKPT_STATUS_MAX 0x8000

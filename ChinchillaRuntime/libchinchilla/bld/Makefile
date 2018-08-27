@@ -2,10 +2,10 @@
 
 override SRC_ROOT = ../../src
 
-LIB = libalpaca
+LIB = libchinchilla
 
 OBJECTS = \
-	alpaca.o \
+	chinchilla.o \
 
 DEPS += libio \
 	libmsp \
@@ -21,9 +21,9 @@ DEPS += libio \
 # otherwise. So, perhaps we should remove the conditional logic based on DINO
 # flag from dino.h.
 override CFLAGS += \
-	-DALPACA \
+	-DCHINCHILLA \
 	-I$(SRC_ROOT)/include \
-	-I$(SRC_ROOT)/include/libalpaca \
+	-I$(SRC_ROOT)/include/libchinchilla \
 #	-DCONFIG_LIBMSPCONSOLE_PRINTF \
 #	-DCONFIG_LIBEDB_PRINTF \
 #	-DCONFIG_LIBEDB_PRINTF_EIF \

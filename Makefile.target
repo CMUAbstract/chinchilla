@@ -3,28 +3,33 @@
 
 include $(MAKER_ROOT)/Makefile.env
 
-LOCAL_CFLAGS += -DALPACA
+LOCAL_CFLAGS += -DCHINCHILLA
 
-ALPACA_LIB = $(ALPACA_ROOT)/LLVM/build/src/libAlpacaPass.so
+CHINCHILLA_LIB = $(CHINCHILLA_ROOT)/LLVM/build/src/libChinchillaPass.so
 
 %.gp.bc : %.bc
-	$(OPT) -debug -stats -load $(ALPACA_LIB) \
+	$(OPT) -debug -stats -load $(CHINCHILLA_LIB) \
 	  -globalpromotion \
 	  -o $@ $<
 
 %.alpaca.bc : %.gp.bc
-	$(OPT) -debug -stats -load $(ALPACA_LIB) \
+	$(OPT) -debug -stats -load $(CHINCHILLA_LIB) \
 	  -getloopcount \
 	  -transform \
 	  -o $@ $<
-
+#
+#%.alpaca.bc : %.gp.bc
+#	$(OPT) -debug -stats -load $(ALPACA_LIB) \
+#	  -getloopcount \
+#	  -transform \
+#	  -o $@ $<
 
 LINK_OBJECTS = $(OBJECTS:.o=.alpaca.bc)
 
 override DEPS += \
-	libalpaca \
+	libchinchilla \
 
-DEP_ROOT_libalpaca = $(ALPACA_ROOT)/AlpacaRuntime
+DEP_ROOT_libchinchilla = $(CHINCHILLA_ROOT)/ChinchillaRuntime
 
 override CLFAGS += $(LOCAL_CFLAGS) \
 
